@@ -7,7 +7,7 @@
    crossorigin="anonymous"/>
   <meta charset="UTF-8"/>
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-    <title>Homepage</title>
+    <title>Add Blog</title>
 </head>
 <body>
  
@@ -24,7 +24,7 @@
           </li>
           <% if (locals.user) { %>
             <li class="nav-item">
-              <a class="nav-link" href="/blog/add-new">Add Blog</a>
+              <a class="nav-link" href="#">Add Blog</a>
             </li>
             <li class="nav-item dropdown">
               <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
@@ -46,18 +46,28 @@
       </div>
     </div>
   </nav>
-    <div class="container mt-3"  >
-      <% blogs.forEach(blog => { %>
-        <div class="card" style="width: 18rem;">
-          <img src="<%= blog.coverImageURL %>" class="card-img-top" >
-          <div class="card-body">
-            <h5 class="card-title"><%= blog.title %></h5>
-            <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-            <a href="/blog/<%= blog._id %>" class="btn btn-primary">Read More</a>
+  <div class="conatiner m-4">
+      <form action="/blog" method="POST" enctype="multipart/form-data">
+        <div class="mb-3">
+            <label for="coverImage" class="form-label">Cover Image</label>
+            <input type="file" class="form-control" id="coverImage" name="coverImage" aria-describedby="title"/>
           </div>
-        </div>
-      <% }) %>
-    </div>
+          <div class="mb-3">
+            <label for="title" class="form-label">Title</label>
+            <input type="text" class="form-control" id="title" name="title" aria-describedby="title"/>
+          </div>
+          <div class="mb-3">
+            <label for="body" class="form-label">Content</label>
+            <div class="form-floating">
+                <textarea name="body" class="form-control"  id="body" style="height: 100px"></textarea> 
+           </div>
+         </div>
+         <div class="mb-3">
+            <button class="btn btn-primary">Submit</button>
+         </div>
+         
+      </form>
+  </div>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/js/bootstrap.bundle.min.js"
     integrity="sha384-HwwvtgBNo3bZJJLYd8oVXjrBZt8cqVSpeBNS5n7C8IVInixGAoxmnlMuBnhbgrkm" 
     crossorigin="anonymous"></script>

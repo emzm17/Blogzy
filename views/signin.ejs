@@ -23,20 +23,20 @@
             <a class="nav-link active" aria-current="page" href="#">Home</a>
           </li>
           <li class="nav-item">
-            <a class="nav-link" href="#">Add Blog</a>
+            <a class="nav-link" href="/users/signup">Create Account</a>
           </li>
-          <li class="nav-item dropdown">
-            <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-              Dibya Ranjan
-            </a>
-            <ul class="dropdown-menu">
-              <li><a class="dropdown-item" href="#">Logout</a></li>
-            </ul>
+          <li class="nav-item">
+            <a class="nav-link" href="/users/signin">Signin</a>
           </li>
         </ul>
       </div>
     </div>
   </nav>
+  <% if (locals.error) { %>
+    <div class="alert alert-danger" role="alert">
+     <%=locals.error %>
+    </div>
+  <% } %>
   <div class="container mt-4">
     <form action="/users/signin" method="POST">
         <div class="mb-3">
