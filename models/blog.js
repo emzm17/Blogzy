@@ -1,4 +1,6 @@
 const mongoose=require('mongoose');
+const Schema=mongoose.Schema;
+const objectId=Schema.Types.ObjectId;
 
 
 const blogSchema=new mongoose.Schema({
@@ -15,9 +17,10 @@ const blogSchema=new mongoose.Schema({
         required:false,
     },
     createdBy:{
-        type:mongoose.Schema.Types.ObjectId,
+        type:objectId,
         ref:'user',
-    },
+    }
+,
 
 },{timestamps: true});
 
