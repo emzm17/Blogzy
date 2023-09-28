@@ -23,7 +23,7 @@ jobs:
       
 
       - name: Build Docker
-        run: docker build -t blogzy .
+        run: docker build -t blogzy-image
       - name: Push to Dockerhub
         run: docker push emzm17/blogzy:latest
 
