@@ -8,7 +8,7 @@ on:
 
 jobs:
   push_to_registry:
-    name: Push Docker iamge to Docker Hub
+    name: Push Docker image to Docker Hub
     runs-on: ubuntu-latest
     steps:
       - name: Check out the repo
@@ -23,9 +23,9 @@ jobs:
       
 
       - name: Build Docker
-        run: docker build -t blog-website .
+        run: docker build -t blogzy .
       - name: Push to Dockerhub
-        run: docker push emzm17/blog-website:latest
+        run: docker push emzm17/blogzy:latest
 
           
 
